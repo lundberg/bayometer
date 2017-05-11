@@ -1,5 +1,8 @@
 .DEFAULT_GOAL := build
-.PHONY: build clean upload monitor
+.PHONY: dependencies build clean upload monitor
+
+dependencies:
+	platformio lib --storage-dir ../lib install
 
 clean:
 	platformio run -t clean
