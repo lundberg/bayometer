@@ -6,7 +6,7 @@
 #define PIN_RPM 2
 
 SevenSegmentTM1637 display(PIN_CLK, PIN_DIO);
-Tachometer tachometer(PIN_RPM, 4);
+Tachometer tachometer(PIN_RPM, 2);  // Boxer-four = 2 sparks per rotation
 
 
 void spark() {
