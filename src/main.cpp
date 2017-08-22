@@ -49,7 +49,8 @@ void setup() {
     setupDisplay();
     setupNeoPixels();
 
-    tachometer.begin(&spark);
+    tachometer.begin();
+    //tachometer.begin(&spark);
 
     pinMode(13, INPUT);  // RPM vs Hz
 
