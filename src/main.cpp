@@ -2,6 +2,7 @@
 #include <SevenSegmentTM1637.h>
 #include <FastLED.h>
 #include "Gauge.h"
+#include "FuelTank.h"
 
 #define PIN_DISPLAY_CLK 4
 #define PIN_DISPLAY_DIO 5
@@ -19,6 +20,8 @@ Tachometer tachometer(PIN_RPM, 2);  // Boxer-four = 2 sparks per rotation
 CRGB leds[NEOPIXEL_LED_COUNT];
 Gauge rpmGauge(leds, 12, 21, IDLE_RPM, MAX_RPM, 0xFF8000);
 //Gauge speedGauge(leds, 10, 1, 0.0, 100.0, 0xFF8000);
+
+FuelTank tank(A0, 1.8, 103.8);
 
 
 void spark() {
@@ -51,6 +54,8 @@ void setup() {
 
     tachometer.begin();
     //tachometer.begin(&spark);
+
+    tank.begin();
 
     pinMode(13, INPUT);  // RPM vs Hz
 
