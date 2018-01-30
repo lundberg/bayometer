@@ -11,7 +11,7 @@ build:
 	platformio run
 
 upload:
-	platformio run -t upload
+	platformio run -t program
 
 monitor:
 	platformio serialports monitor --exit-char 88 --baud 9600
