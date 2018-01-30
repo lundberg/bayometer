@@ -99,6 +99,7 @@ private:
         uint16_t value = analogRead(this->pin);
         float vcc = readVcc() / 1000.0;
         float voltage = value * vcc / 1024.0;
+        return voltage;
     }
 
 };
